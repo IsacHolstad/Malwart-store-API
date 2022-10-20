@@ -14,15 +14,30 @@ async function getProducts() {
         for (let i = 0; i < responseJSON.length; i++){
             console.log(responseJSON[i].title)
             console.log(responseJSON[i].image)
-            productContainer.innerHTML += `<div class="m-16 mx-auto container border-2 rounded-xl border-gray-300">
-            <div class="">${responseJSON[i].title}
-            <div id="title-of-product" class="">${responseJSON[i].price} $</div>
-            <div>${wholeResponse[i].image}</div>
-
-            
-            </div>
-
-        </div>`
+            console.log(responseJSON[i].price)
+            console.log(responseJSON[i].description)
+            productContainer.innerHTML += `
+            <div class="w-screen h-screen flex justify-center items-center">
+              <div class="container mx-auto max-w-sm w-full p-4 sm:w-1/2">
+                <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
+                  <div class="prod-title">
+                    <p class="text-2xl uppercase text-gray-900 font-bold">${responseJSON[i].title}</p>
+                  </div>
+                  <div class="prod-img">
+                    <img src="${wholeResponse[i].image}"
+                         class="w-full object-cover object-center container mx-auto" />
+                  </div>
+                  <div class="prod-info grid gap-10">
+                    <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
+                      <p class="font-bold text-xl mt-4">${responseJSON[i].price}$</p>
+                      <button
+                              class="px-6 py-2 mt-4 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">Add
+                        to cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>`
         }
     }
     catch (error){
