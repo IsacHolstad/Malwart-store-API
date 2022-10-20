@@ -17,7 +17,7 @@ async function getProducts() {
             console.log(responseJSON[i].price)
             console.log(responseJSON[i].description)
             productContainer.innerHTML += `
-            <div class="w-screen h-screen flex justify-center items-center">
+            <div class="w-screen mt-8 flex justify-center items-center">
               <div class="container mx-auto max-w-sm w-full p-4 sm:w-1/2">
                 <div class="card flex flex-col justify-center p-10 bg-white rounded-lg shadow-2xl">
                   <div class="prod-title">
