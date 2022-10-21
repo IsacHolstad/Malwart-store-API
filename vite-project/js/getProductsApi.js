@@ -30,7 +30,7 @@ async function getProducts() {
                   </div>
                   <div class="prod-info grid gap-10">
                     <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
-                      <p class="font-bold text-xl mt-4 hover:underline">${responseJSON[i].price}$</p>
+                      <p class="font-bold text-2xl mt-4 hover:underline">${responseJSON[i].price}$</p>
                     </div>
                   </div>
                 </div>
