@@ -17,7 +17,7 @@ async function getProducts() {
             console.log(responseJSON[i].price)
             console.log(responseJSON[i].description)
             productContainer.innerHTML += `
-            <div class=" mt-8 flex  justify-center items-center ">
+            <div class=" mt-8   justify-center items-center flex container">
               <div class="container mx-auto   p-4 sm:w-1/2">
                <a href="./productPage.html?id=${responseJSON[i].id}" class="">
                 <div class="card flex flex-col justify-center p-10  rounded-lg shadow-xl border-2 border-gray-200 ">
