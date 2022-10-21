@@ -19,7 +19,7 @@ async function getProducts() {
             productContainer.innerHTML += `<a href="./productPage.html?id=${responseJSON[i].id}">
             <div class="w-screen mt-8 flex justify-center items-center">
               <div class="container mx-auto max-w-sm w-full p-4 sm:w-1/2">
-                <div class="card flex flex-col justify-center p-10  rounded-lg shadow-xl border-2 border-gray-300">
+                <div class="card flex flex-col justify-center p-10  rounded-lg shadow-xl border-2 border-gray-100">
                   <div class="prod-title">
                     <p class="text-2xl uppercase text-gray-900 font-bold">${responseJSON[i].title}</p>
                   </div>
