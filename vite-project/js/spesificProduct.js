@@ -2,20 +2,20 @@ const queryString = document.location.search;
 console.log(queryString);
 const params = new URLSearchParams(queryString);
 console.log(params);
-const id = params.get('id')
+const id = params.get("id");
 console.log("id of the post clicked", id);
 
 const apiUrl = `https://fakestoreapi.com/products/${id}`;
-console.log(apiUrl)
-const productById = document.querySelector('#spesific-product-container')
+console.log(apiUrl);
+const productById = document.querySelector("#spesific-product-container");
 
 async function getSpesificProductById() {
-    try{
-        const response = await fetch(apiUrl);
-        console.log(response);
-        const singelProduct = await response.json();
-        console.log(singelProduct)
-        productById.innerHTML = `
+  try {
+    const response = await fetch(apiUrl);
+    console.log(response);
+    const singelProduct = await response.json();
+    console.log(singelProduct);
+    productById.innerHTML = `
         <div class=" mt-14 flex flex-col justify-center items-center container ">
               <div class="container mx-auto  p-4 sm:w-full ">
                 <div class="card flex flex-col justify-center p-10  rounded-lg shadow-xl border-2 border-gray-200 ">
@@ -38,11 +38,9 @@ async function getSpesificProductById() {
                 </div>
               </div>
             </div>
-        `
-
-    }
-    catch (error) {
-        productById.innerHTML = `<section class="bg-primary relative z-10 py-[120px]">
+        `;
+  } catch (error) {
+    productById.innerHTML = `<section class="bg-primary relative z-10 py-[120px]">
   <div class="container mx-auto">
     <div class="-mx-4 flex">
       <div class="w-full px-4">
@@ -87,7 +85,7 @@ async function getSpesificProductById() {
     ></div>
   </div>
 </section>
-<!-- ====== Error 404 Section End -->`
-    }
+<!-- ====== Error 404 Section End -->`;
+  }
 }
-getSpesificProductById()
+getSpesificProductById();
