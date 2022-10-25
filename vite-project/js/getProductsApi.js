@@ -26,7 +26,7 @@ async function getProducts() {
                   </div>
                   <div class="prod-img">
                     <img src="${wholeResponse[i].image}"
-                         class=" object-cover object-center container mx-auto mt-4" />
+                         class=" object-cover object-center container mx-auto mt-4 w-9/12\t" />
                   </div>
                   <div class="prod-info grid gap-10">
                     <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
