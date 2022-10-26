@@ -1,20 +1,38 @@
 const productContainer = document.querySelector('#apiContainerData');
-const imgProduct = document.querySelector('#imgDisplay');
+//const imgProduct = document.querySelector('#imgDisplay');
+const searchBarInput = document.querySelector("#search-product-input")
 const ApiUrl = 'https://fakestoreapi.com/products';
+
+let responseJSON = [];
+console.log(responseJSON)
+
+searchBarInput.addEventListener('keyup', (e) =>{
+  //console.log(e)
+  const searchString = e.target.value
+  //console.log(e.target.value)
+  const filteredTitles = responseJSON.filter((titleOfProduct) => {
+    return (
+        titleOfProduct.title.includes(searchString)
+    )
+
+  })
+  console.log(filteredTitles)
+})
+
 
 async function getProducts() {
   try {
     const response = await fetch(ApiUrl);
-    console.log(response);
-    const responseJSON = await response.json();
-    console.log(responseJSON);
+    //console.log(response);
+    responseJSON = await response.json();
+    //console.log(responseJSON);
     const products = responseJSON.results;
-    console.log(products);
+    //console.log(products);
     for (let i = 0; i < responseJSON.length; i++) {
-      console.log(responseJSON[i].title);
-      console.log(responseJSON[i].image);
-      console.log(responseJSON[i].price);
-      console.log(responseJSON[i].description);
+      console.log(responseJSON);
+      //console.log(responseJSON[i].image);
+      //console.log(responseJSON[i].price);
+      //console.log(responseJSON[i].description);
       productContainer.innerHTML += `
             <div class=" mt-8 justify-center items-center flex container flex-col mx-auto">
               <div class="container mx-auto   p-4 sm:w-1/2">
@@ -44,6 +62,8 @@ async function getProducts() {
 }
 
 getProducts();
+
+
 
 let wholeResponse = [
   {

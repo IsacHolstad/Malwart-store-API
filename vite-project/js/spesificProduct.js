@@ -16,9 +16,9 @@ async function getSpesificProductById() {
     const singelProduct = await response.json();
     console.log(singelProduct);
     productById.innerHTML = `
-        <div class=" mt-14 flex flex-col justify-center items-center container ">
+        <div class=" mt-14 flex flex-col justify-center items-center container mx-auto ">
               <div class="container mx-auto  p-4 sm:w-full ">
-                <div class="card object-contain flex flex-col justify-center p-10  rounded-lg shadow-xl border-2 border-gray-300 ">
+                <div class="card  flex flex-col justify-center p-10  rounded-lg shadow-xl border-2 border-gray-300 mx-auto container">
                   <div class="prod-title">
                     <p class="text-2xl uppercase text-gray-900 font-bold">${singelProduct.title}</p>
                   </div>
