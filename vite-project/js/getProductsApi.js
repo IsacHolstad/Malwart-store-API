@@ -29,7 +29,7 @@ async function getProducts() {
     const products = responseJSON.results;
     //console.log(products);
     for (let i = 0; i < responseJSON.length; i++) {
-      console.log(responseJSON);
+      //console.log(responseJSON);
       //console.log(responseJSON[i].image);
       //console.log(responseJSON[i].price);
       //console.log(responseJSON[i].description);
@@ -42,7 +42,7 @@ async function getProducts() {
                     <p class="text-xl uppercase text-gray-900 font-bold">${responseJSON[i].title}</p>
                   </div>
                   <div class="prod-img">
-                    <img src="${wholeResponse[i].image}"
+                    <img src="${responseJSON[i].image}"
                          class=" object-cover object-center container mx-auto mt-4 w-9/12\t" />
                   </div>
                   <div class="prod-info grid gap-10">
@@ -57,7 +57,7 @@ async function getProducts() {
           `;
     }
   } catch (error) {
-    productContainer.innerHTML = `<h1 class="text-center "> error</h1>`;
+    productContainer.innerHTML = `<h1 class="text-center text-red-600 text-2xl "> error</h1>`;
   }
 }
 
