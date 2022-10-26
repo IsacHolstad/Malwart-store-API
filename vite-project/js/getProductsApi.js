@@ -8,11 +8,11 @@ console.log(responseJSON)
 
 searchBarInput.addEventListener('keyup', (e) =>{
   //console.log(e)
-  const searchString = e.target.value
+  const searchString = e.target.value.toLowerCase();
   //console.log(e.target.value)
   const filteredTitles = responseJSON.filter((titleOfProduct) => {
     return (
-        titleOfProduct.title.includes(searchString)
+        titleOfProduct.title.toLowerCase().includes(searchString)
     )
 
   })
