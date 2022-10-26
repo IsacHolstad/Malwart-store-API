@@ -16,7 +16,7 @@ async function getProducts() {
       console.log(responseJSON[i].price);
       console.log(responseJSON[i].description);
       productContainer.innerHTML += `
-            <div class=" mt-8   justify-center items-center flex container">
+            <div class=" mt-8 justify-center items-center flex container flex-col mx-auto">
               <div class="container mx-auto   p-4 sm:w-1/2">
                <a href="./productPage.html?id=${responseJSON[i].id}">
                 <div class="card object-contain flex flex-col justify-center p-10  rounded-lg shadow-xl border-2 border-gray-300 ">
@@ -28,8 +28,8 @@ async function getProducts() {
                          class=" object-cover object-center container mx-auto mt-4 w-9/12\t" />
                   </div>
                   <div class="prod-info grid gap-10">
-                    <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
-                      <p class="font-bold text-2xl mt-4 hover:underline">${responseJSON[i].price}$</p>
+                    <div class="flex flex-col md:flex-row justify-between items-center text-gray-900 text-center">
+                      <p class="font-bold text-2xl mt-4 hover:underline text-center">${responseJSON[i].price}$</p>
                     </div>
                   </div>
                 </div>

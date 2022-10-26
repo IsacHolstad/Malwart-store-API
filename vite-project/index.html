@@ -7,6 +7,7 @@
     <title>Home / Malwart</title>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/getProductsApi.js" defer></script>
+    <script type="module" src="./js/filterSearch/filterSearch.js" defer></script>
   </head>
   <body>
     <header>
@@ -98,7 +99,17 @@
       </div>
     </header>
     <main>
-      <div id="apiContainerData" class="mt-2 text-center"></div>
+      <input
+              type="search"
+              placeholder="Search for products..."
+              class="w-8/12	 border-2 border-purple-600 drop-shadow-xl mt-4 mx-auto ml-8 rounded-lg h-10 pl-4"
+              spellcheck="true"
+      >
+      <div
+              id="apiContainerData"
+              class="mt-2 text-center mx-auto items-center">
+
+      </div>
     </main>
     <footer class="bg-white relative bottom-0 mt-40 border-t-2 border-black">
       <div
