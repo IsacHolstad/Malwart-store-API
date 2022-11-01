@@ -1,23 +1,19 @@
 const productContainer = document.querySelector('#apiContainerData');
 //const imgProduct = document.querySelector('#imgDisplay');
-const searchBarInput = document.querySelector("#search-product-input")
+const searchBarInput = document.querySelector('#search-product-input');
 const ApiUrl = 'https://fakestoreapi.com/products';
 
 let responseJSON = [];
 
-searchBarInput.addEventListener('keyup', (e) =>{
+searchBarInput.addEventListener('keyup', (e) => {
   //console.log(e)
   const searchString = e.target.value.toLowerCase();
   //console.log(e.target.value)
   const filteredTitles = responseJSON.filter((titleOfProduct) => {
-    return (
-        titleOfProduct.title.toLowerCase().includes(searchString)
-    )
-
-  })
-  console.log(filteredTitles)
-})
-
+    return titleOfProduct.title.toLowerCase().includes(searchString);
+  });
+  console.log(filteredTitles);
+});
 
 async function getProducts() {
   try {
@@ -27,7 +23,7 @@ async function getProducts() {
     //console.log(responseJSON);
     const products = responseJSON.results;
     //console.log(products);
-    productContainer.innerHTML = ""
+    productContainer.innerHTML = '';
     for (let i = 0; i < responseJSON.length; i++) {
       //console.log(responseJSON);
       //console.log(responseJSON[i].image);
@@ -61,9 +57,4 @@ async function getProducts() {
   }
 }
 
-
 getProducts();
-
-
-
-
