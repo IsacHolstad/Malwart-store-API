@@ -1,4 +1,4 @@
-import { USER_SIGN_UP } from '../api-library/api-endpoints.js';
+import { USER_SIGN_UP } from './api-source/api-endpoints.js';
 
 console.log(USER_SIGN_UP);
 
